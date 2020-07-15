@@ -1,0 +1,18 @@
+MVC
+	- model
+		- responsible for getting and manipulating data
+		- brain of the application
+		- interacts with a database (SELECT, INSERT, UPDATE, DELETE)
+		- data related logic
+		- communicates with controller
+	
+	- view
+		- what the end user sees (UI)
+		- usually consists of HTML/CSS
+		- communicates with the controller
+	
+	- controller
+		- receives input (from view, url)
+		- processes requests (GET, POST, PUT, DELETE)
+		- gets data from the model
+		- passes data to the view

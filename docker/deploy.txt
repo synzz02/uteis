@@ -1,0 +1,73 @@
+﻿para rodar o app/projeto em docker local:
+
+--> o que vc precisara:
+
+--> compilar o front
+	--> yarn build/npm run build
+	--> a pasta gerada pelo comando é a pasta "dist"
+		--> dentro dela, existe o index.html (arquivo principal) e as dependências para o app funcionar
+
+--> trocar o dirname do nodejs pra pasta onde o vue está
+
+--> fazer arquivo Dockerfile
+	--> https://docs.docker.com/engine/reference/builder/
+	--> ver exemplo no projeto
+
+--> abrir terminal docker no diretório do app/projeto
+
+--> buildar imagem docker
+	--> docker build -t <nomeDaImg>:versao .
+		--> a versao pode ser latest mesmo
+		--> o ponto representa o diretorio (onde estara o Dockerfile)
+
+--> rodar imagem em um container
+	--> docker run -it -d -p ipMaquinaFisica:ipExposeDockerfile <nomeDaImg>:versao
+		--> -d para rodar em modo detached
+
+se estiver usando docker toolbox for windows, digitar docker-machine ip,
+para pegar o IP que usara para acesso, juntamente com a porta
+
+exemplo de endereço configurado:
+http://192.168.99.100:8080/
+
+----------------------------------------------------------------------------------------------
+
+para subir pro docker hub:
+https://medium.com/trainingcenter/docker-dockerhub-pull-e-push-nas-suas-imagens-57dffa0232ad
+
+----------------------------------------------------------------------------------------------
+
+para rodar o app/projeto em algum servidor, que tenha docker instalado:
+--> logar no servidor
+--> dar pull na imagem do docker hub
+--> rodar em um container
+
+----------------------------------------------------------------------------------------------
+para rodar com redis (network)
+	--> rodar container com redis
+		--> docker run -itd -p 5432:6379 redis
+
+	--> criar network
+		--> docker network create redis --driver bridge
+
+	--> conectar container redis na network redis com alias (fazer assim separado é melhor doq quando
+		vai rodar o container inicialmente pois facilita a definição do alias)
+		--> docker network connect redis 03b88(container id) --alias redis
+
+	--> rodar container cliente do redis
+		--> docker run -itd -p 8080:8888 --network=redis meeteasier
+----------------------------------------------------------------------------------------------
+
+pronto :)
+
+bonus:
+https://youtu.be/B7HNhe-dcFk
+https://docs.docker.com/engine/reference/commandline/image_rm/
+https://docs.docker.com/engine/reference/commandline/rm/
+
+
+para entrar no servidor
+ssh devops@server_ip
+
+senha do servidor 192.168.208.146
+pcf654!@

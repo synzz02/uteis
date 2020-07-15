@@ -1,0 +1,70 @@
+docker is a tool to automate the deployment of an application as a lightweight container so that
+the application can work efficiently in different environments
+
+a docker container is a lightweight package of software that consists of all the dependencies
+(code, frameworks, libraries etc.) required to run an application
+
+how do you make docker work across multiple nodes so that they can share containers among each other?
+-> docker swarm
+
+docker swarm is a service which allows users to create and manage a cluster of docker nodes and
+schedule containers
+
+each node of a docker swarm is a docker daemon and all docker daemons interact using the docker api
+
+here, services can be deployed and accessed by nodes of same cluster
+
+docker daemon interacts with the operating system in order to create or manage docker containers
+
+when there is a node failure, docker swarm can reschedule containers on node failures
+
+swarm node has a backup folder, in case the main node fails, it can be used to restore the data onto a new
+swarm
+
+
+- features of docker swarm
+	- decentralized access
+	- high security
+	- auto load balancing
+	- high scalability
+	- roll-back a task
+
+- in swarm, containers are launched using services
+- a service is a group of containers of the same image
+- services enables to scale your application
+- before you can deploy a service in docker swarm, you must have at least one node deployed
+- there are two types of nodes in docker swarm
+	- manager node: maintains cluster management tasks
+	- worker node: receive and execute tasks from manager node
+
+
+- manager node knows the status of all the worker nodes in a cluster
+- worker nodes accept tasks sent from manager node
+- every worker node has an agent, which reports on the state of the node's tasks to the manager
+- the worker nodes communicate with the manager node using api over http
+
+- in docker swarm, services can be deployed and accessed by any node of same cluster
+- while creating a service, a user has to specify which container image to use
+- here, a service is either global or replicated
+- a global service will run on every swarm node
+- in a replicated service, the manager node distributes tasks to worker nodes
+
+- a service is a description of a task or the state, whereas a task does the work
+	- (container)
+	- a definição de serviços do Docker nada mais é que vários containers atendendo um serviço.
+	- exemplo: o serviço do Nginx, no qual vários containers (espalhados pelo cluster)
+		rodam e podem atender minhas requisições gerando alta disponibilidade.
+
+- docker enables a user to create services, which can start tasks
+- when a task is assigned to a node, it cannot be assigned to another node
+
+It is possible to have multiple manager nodes on Swarm, but there will be only one primary manager node, which
+gets elected by the other Manager nodes
+
+- os comandos do Swarm para gerenciar o cluster só funcionam nos nós que são managers (gerentes).
+  ou seja, todos os comandos como service e stack do Docker só vão funcionar nos managers.
+
+para ver em prática:
+- labs.play-with-docker.com
+	- cada instância vale como uma máquina virtual
+- https://www.youtube.com/watch?v=Tm0Q5zr3FL4 - 10:25

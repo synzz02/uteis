@@ -1,0 +1,36 @@
+- docker = todos os comandos de docker
+
+- docker info = informaçoes sobre servidor, imagens, plugins, etc
+
+- docker images = mostra todas as imagens que o seu pc possui localmente
+
+- docker image rm [image id] = remove uma imagem local
+
+- docker pull [image name] = faz pull de uma imagem do docker hub
+
+- docker container ls = mostra todos os containers ativos/up
+
+- docker container ls -a = mostra todos os containers
+
+- docker ps = faz o mesmo que docker container ls - a, porém é mais curto
+
+- docker container run -it -p 80:80 nginx 
+ - run = comando pra iniciar
+ - -it = ?
+ - -p = publish ?
+ - 80:80 = portas
+ - nginx = nome da imagem que quer rodar
+
+- docker container run -d -p 8080:80 --name mynginx nginx
+ - -d = roda dettached
+ - --name [nome] = da a possibilidade de colocar um nome local pro container
+
+- docker rm [container id]/[container name] = remove um container por name ou id
+ - ex: docker rm 188b
+ - ex: docker rm mynginx
+
+- docker rm [container id]/[container name] -f = remove também um container, porém à força,
+oq significa que pode remover diretamente um container que estiver ativo
+
+
+mais comandos em: https://gist.github.com/bradtraversy/89fad226dc058a41b596d586022a9bd3

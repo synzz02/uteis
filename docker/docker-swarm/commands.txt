@@ -1,0 +1,37 @@
+- docker swarm init --advertise-addr “ip_da_instância”
+	faz a instancia ser manager leader. gera um comando que pode ser usado em outra instancia para entrar como
+	um worker
+	exemplo: 
+	- docker swarm join --token SWMTKN-1-1nzp8x93whn9sfssqtbnbrhlud5oz2y3la0h27wehp5rnbbc7e-5rdr1mk6g4ukyts6ftgmbui17 192.168.0.48:2377
+		faz a instancia entrar como worker
+
+- docker swarm join-token worker
+	é o comando que gera um outro comando que pode ser usado em outra instancia para entrar como worker
+	exemplo: 
+	- docker swarm join --token SWMTKN-1-1nzp8x93whn9sfssqtbnbrhlud5oz2y3la0h27wehp5rnbbc7e-5rdr1mk6g4ukyts6ftgmbui17 192.168.0.48:2377
+		faz a instancia entrar como worker
+
+- docker swarm join-token manager
+	usar no manager leader para obter um outro comando que pode ser usado em outra instancia para entrar como
+	outro manager
+	exemplo:
+	- docker swarm join --token SWMTKN-1-1nzp8x93whn9sfssqtbnbrhlud5oz2y3la0h27wehp5rnbbc7e-bnevclj989ab3kudd74errdqm 192.168.0.48:2377
+
+
+- docker node ls
+	mostra todos os nodes
+
+- docker service create -- name [name] --mode [mode] [image] [command]
+	cria um serviço
+	exemplo: docker service create --name helloworld alpine ping docker.com
+		cria um serviço replicado
+		os workers não conseguiram enxergá-lo
+	exemplo: docker service create --name helloworld1 --mode global alpine ping docker.com
+		cria um serviço global
+		os workers conseguiram enxergá-lo
+
+- docker service ls
+	lista os serviços
+
+- docker swarm leave --force
+	força o node a sair do swarm

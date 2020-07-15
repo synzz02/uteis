@@ -1,0 +1,186 @@
+- CD
+	amarelo
+	
+- Empacotamento de container
+	amarelo
+	
+- Boas práticas de versionamento
+	verde
+	
+- Resolução de conflitos
+	verde
+	
+- Estratégia de branches
+	verde
+	
+- teste unitário
+	azul
+	
+- mocks
+	amarelo
+	
+- clone de repositório, envio de alterações, buscar alterações
+	verde
+
+- CI
+	amarelo
+	
+- aplicar padrões de projetos na criação de entidades
+	vermelho
+	
+- controle de transação
+	vermelho
+	
+- criação de identificadores simples e compostos
+	vermelho
+	
+- DDL
+	amarelo
+
+- indices
+	amarelo
+
+- DML
+	azul
+	
+- select com agregação
+	vermelho
+	
+- views
+	vermelho
+	
+- stored procedures
+	vermelho
+	
+- versionamento de banco de dados
+	vermelho
+	
+- gerênciamento de dependência
+	azul
+	
+- convenção de código
+	azul
+	
+- build de aplicação
+	amarelo
+	
+- padrões de organização de css
+	azul
+	
+- pré-processadores de CSS
+	verde
+	
+- flex-box
+	verde
+	
+- css grid
+	vermelho
+	
+- transpiler de javascript
+	verde
+	
+- protocolo HTTP/HTTPS
+	vermelho
+	
+- REST
+	verde
+	
+- DTO
+	azul
+	
+- logger
+	vermelho
+	
+- tratamento de erros
+	vermelho
+	
+- autenticação
+	vermelho
+	
+- permissionamento
+	vermelho
+	
+- arquitetura
+	azul
+	
+- rotas
+	verde
+	
+- componentes
+	verde
+	
+- clean code
+	amarelo
+	
+- code review
+	verde
+	
+- SOLID
+	vermelho
+	
+- pattern singleton
+	vermelho
+	
+- pattern factory method
+	vermelho
+	
+- pattern static factory method
+	vermelho
+	
+- calisthenics
+	vermelho
+	
+- pattern builder
+	vermelho
+	
+- pattern strategy
+	vermelho
+	
+- pattern abstract factory
+	vermelho
+	
+- pattern facade
+	vermelho
+	
+- code smells
+	vermelho
+
+- pattern template method
+	vermelho
+	
+- pattern observer
+	vermelho
+	
+- arquitetura de camadas
+	vermelho
+	
+- repositórios e DAOs
+	amarelo
+	
+- client server
+	vermelho
+	
+- mensageria
+	vermelho
+	
+- OWASP top 10
+	vermelho
+	
+- pull request
+	verde
+	
+- cobertura de testes
+	vermelho
+	
+- testes de integração
+	amarelo
+	
+- mapeamento de entidades
+	amarelo
+	
+	
+total: 60 competencias
+vermelhas: 30
+amarelas: 11
+azuis: 7
+verdes: 12
